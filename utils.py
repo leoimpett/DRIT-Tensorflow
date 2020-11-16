@@ -2,6 +2,7 @@ import tensorflow as tf
 from tensorflow.contrib import slim
 from scipy import misc
 import os, random
+import imageio
 import numpy as np
 
 class ImageData:
@@ -56,7 +57,8 @@ def inverse_transform(images):
     return (images+1.) / 2
 
 def imsave(images, size, path):
-    return misc.imsave(path, merge(images, size))
+#     return misc.imsave(path, merge(images, size))
+    return imageio.imwrite(merge(images,size),path)
 
 def merge(images, size):
     h, w = images.shape[1], images.shape[2]
