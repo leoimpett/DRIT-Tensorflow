@@ -58,7 +58,7 @@ def inverse_transform(images):
 
 def imsave(images, size, path):
 #     return misc.imsave(path, merge(images, size))
-    return imageio.imwrite(merge(images,size),path)
+    return imageio.imwrite(path,merge(images,size))
 
 def merge(images, size):
     h, w = images.shape[1], images.shape[2]
